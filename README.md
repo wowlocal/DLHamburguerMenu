@@ -27,7 +27,7 @@ Those three view controllers don't need to be linked by any segue. Also, add as 
 
 Then, in your root view controller, instanciate the content and menu view controller in awakeFromNib():
 
-```
+```swift
 override func awakeFromNib() {
   self.contentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DLDemoNavigationViewController") as UIViewController
   self.menuViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DLDemoMenuViewController") as UIViewController
@@ -38,7 +38,7 @@ override func awakeFromNib() {
 
 To properly segue from the content view controller, in your menu, once you have presented (by pushing or showing) another view controller, you should update the content view controller. In the case of a navigation controller, simply assign it as the new content controller once you push the view:
 
-```
+```swift
 func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
   let nvc = self.mainNavigationController()
     if let hamburguerViewController = self.findHamburguerViewController() {
